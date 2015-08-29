@@ -4,7 +4,7 @@
   "description": "Authorized access control for Ignis.js",
   "main": "lib/index.js",
   "scripts": {
-    "c": "./node_modules/.bin/gulp coverage && ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info",
+    "test": "./node_modules/.bin/gulp coverage && ./node_modules/.bin/codeclimate-test-reporter < coverage/lcov.info",
     "build": "./node_modules/.bin/gulp build"
   },
   "repository": {
