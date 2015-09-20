@@ -26,6 +26,8 @@ describe('action(2)', function() {
 
     this.ignis = new Ignis();
     this.ignis.use(extension);
+
+    return this.ignis.startup;
   });
 
   it('should proxy the call to Authorized.action', function() {

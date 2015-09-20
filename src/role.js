@@ -22,7 +22,7 @@ export default function role(name, callback) {
   callback = unpromisify(callback);
 
   let wrapped = (req, done) => {
-    callback(req, done);
+    callback(null, req, done);
   };
   if (/\./.test(name)) {
     wrapped = (ent, req, done) => {
