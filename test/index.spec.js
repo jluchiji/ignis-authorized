@@ -24,10 +24,12 @@ describe('extension', function() {
 
     ignis.use(extension);
 
-    expect(ignis).to.have.property('access');
-    expect(ignis).to.have.deep.property('access.role');
-    expect(ignis).to.have.deep.property('access.action');
-    expect(ignis).to.have.deep.property('access.scope');
+    return expect(ignis.startup).to.be.fulfilled.then(function() {
+      expect(ignis).to.have.property('access');
+      expect(ignis).to.have.deep.property('access.role');
+      expect(ignis).to.have.deep.property('access.action');
+      expect(ignis).to.have.deep.property('access.scope');
+    });
   });
 
 });
