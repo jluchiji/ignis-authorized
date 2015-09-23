@@ -9,8 +9,9 @@ import Role        from './role';
 import Scope       from './scope';
 import Action      from './action';
 import Factory     from './factory';
-import { __scopes } from './scope';
+import {__scopes}  from './scope';
 
+import Authorized  from 'authorized';
 
 /*!
  * Ignis extension
@@ -30,6 +31,7 @@ export default function accessExtension(Ignis) {
     this.access.role   = Role;
     this.access.scope  = Scope.bind(this);
     this.access.action = Action;
+    this.access.view   = Authorized.view;
   });
 
 }
