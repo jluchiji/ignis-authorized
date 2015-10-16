@@ -16,22 +16,19 @@ import Authorized  from 'authorized';
 /*!
  * Ignis extension
  */
-export default function accessExtension(Ignis) {
-  Ignis.init(function() {
-    /* Root acess-control namespace */
-    this.access = Object.create(null);
+export default function accessExtension(ignis) {
+  /* Root acess-control namespace */
+  ignis.access = Object.create(null);
 
-    /* Scope storage */
-    this[__scopes] = new Map();
+  /* Scope storage */
+  ignis[__scopes] = new Map();
 
-    /* Attach Authorized middlewares */
-    this.factories.push(Factory);
+  /* Attach Authorized middlewares */
+  ignis.pre.push(Factory);
 
-    /* Attach access-control callbacks */
-    this.access.role   = Role;
-    this.access.scope  = Scope.bind(this);
-    this.access.action = Action;
-    this.access.view   = Authorized.view;
-  });
-
+  /* Attach access-control callbacks */
+  ignis.access.role   = Role;
+  ignis.access.scope  = Scope.bind(ignis);
+  ignis.access.action = Action;
+  ignis.access.view   = Authorized.view;
 }
