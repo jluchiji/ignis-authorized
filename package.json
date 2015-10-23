@@ -1,6 +1,6 @@
 {
   "name": "ignis-authorized",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Authorized access control for Ignis.js",
   "main": "lib/index.js",
   "scripts": {
