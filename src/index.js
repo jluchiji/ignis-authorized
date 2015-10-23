@@ -30,5 +30,5 @@ export default function accessExtension(ignis) {
   ignis.access.role   = Role;
   ignis.access.scope  = Scope.bind(ignis);
   ignis.access.action = Action;
-  ignis.access.view   = Authorized.view;
+  ignis.access.view   = function(req) { return Authorized.view(req); };
 }
